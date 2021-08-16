@@ -29,3 +29,4 @@ yarn-error.log*
 
 plugins/*
 !/plugins/example.js
+!/plugins/telegram.js
