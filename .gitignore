@@ -26,3 +26,6 @@ yarn-error.log*
 
 /database/*
 !/database/.gitkeep
+
+plugins/*
+!/plugins/example.js

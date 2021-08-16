@@ -4,6 +4,16 @@ const express = require("express");
 const path = require("path");
 const sqlite3 = require("sqlite3").verbose();
 
+let plugins = [];
+require("fs")
+  .readdirSync("./plugins")
+  .forEach((file) => {
+    if (file.endsWith(".js")) {
+      console.log(`Loaded ${file} plugin!`);
+      plugins.push(require("./plugins/" + file));
+    }
+  });
+
 const db = new sqlite3.Database("./database/history.db", () => {
   db.run(
     `CREATE TABLE IF NOT EXISTS history (
@@ -66,7 +76,9 @@ const checkService = async (service) => {
   lastUpdate = Date.now();
 
   if (service.lastStatus && service.lastStatus != service.status) {
-    // TODO: WebHooks, Push Notifications, SMS, ...
+    for (let plugin of plugins) {
+      plugin(service);
+    }
   }
 
   db.run(
