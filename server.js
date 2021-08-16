@@ -51,21 +51,23 @@ const checkService = async (service) => {
     ms = end - start;
     code = response.status;
     text = response.statusText || "";
-
     if (code === (service.expectedCode || 200)) {
       status = ms < 250 ? "online" : "degraded";
     } else {
       status = "offline";
     }
-  } catch (err) {
-    console.log(err);
-  }
+  } catch (err) {}
 
+  service.lastStatus = service.status;
   service.status = status;
   service.statusCode = code;
   service.statusText = text;
   service.ms = ms;
   lastUpdate = Date.now();
+
+  if (service.lastStatus && service.lastStatus != service.status) {
+    // TODO: WebHooks, Push Notifications, SMS, ...
+  }
 
   db.run(
     "INSERT INTO history VALUES (?, ?, ?, ?, ?)",
