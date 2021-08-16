@@ -47,6 +47,8 @@ const Chart = (props) => {
             );
             let height = (100 / max) * ms + "%";
 
+            if (status === "offline") height = "100%";
+
             let date = new Date(timestamp).toLocaleString();
 
             let tipText = date + "<br />" + statusText;
