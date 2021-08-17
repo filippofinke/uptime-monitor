@@ -34,6 +34,7 @@ const Service = (props) => {
 
   return (
     <div
+      style={props.style}
       onClick={() => {
         props.onClick(service);
       }}

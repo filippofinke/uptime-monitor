@@ -95,24 +95,35 @@ const App = () => {
     }
   };
 
+  const getServices = () => {
+    let count = services.length;
+    let odd = count % 2 === 1;
+
+    return services.map((service, index) => {
+      let style = {
+        gridColumnStart: 1,
+        gridColumnEnd: 3,
+      };
+
+      return (
+        <Service
+          style={odd && index === count - 1 ? style : {}}
+          key={service.name}
+          onClick={(service) => {
+            selectService(service);
+          }}
+          service={service}
+          selectedService={selectedService}
+        ></Service>
+      );
+    });
+  };
+
   return services ? (
     <div className="app">
       <Header status={globalStatus} lastUpdate={lastUpdate}></Header>
       {selectedService && <Chart service={selectedService}></Chart>}
-      <div className="services">
-        {services.map((service) => {
-          return (
-            <Service
-              key={service.name}
-              onClick={(service) => {
-                selectService(service);
-              }}
-              service={service}
-              selectedService={selectedService}
-            ></Service>
-          );
-        })}
-      </div>
+      <div className="services">{getServices()}</div>
       <ReactTooltip multiline={true} />
     </div>
   ) : (

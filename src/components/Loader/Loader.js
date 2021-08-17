@@ -7,11 +7,11 @@ const Loader = () => {
       <svg viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg">
         <g
           fill="none"
-          fill-rule="evenodd"
+          fillRule="evenodd"
           transform="translate(1 1)"
-          stroke-width="2"
+          strokeWidth="2"
         >
-          <circle cx="22" cy="22" r="6" stroke-opacity="0">
+          <circle cx="22" cy="22" r="6" strokeOpacity="0">
             <animate
               attributeName="r"
               begin="1.5s"
@@ -37,7 +37,7 @@ const Loader = () => {
               repeatCount="indefinite"
             />
           </circle>
-          <circle cx="22" cy="22" r="6" stroke-opacity="0">
+          <circle cx="22" cy="22" r="6" strokeOpacity="0">
             <animate
               attributeName="r"
               begin="3s"
