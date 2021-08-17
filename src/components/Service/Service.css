@@ -1,46 +1,53 @@
 .service {
-  background-color: #2d333b;
-  color: #cdd9e5;
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  border: 1px solid #444c56;
-  cursor: pointer;
+	background-color: #2d333b;
+	color: #cdd9e5;
+	display: flex;
+	align-items: center;
+	padding: 10px;
+	border: 1px solid #444c56;
+	cursor: pointer;
 }
 
 .service .status {
-  display: flex;
-  align-items: center;
-  border-radius: 50%;
-  margin-right: 10px;
-  font-size: 25px;
+	display: flex;
+	align-items: center;
+	border-radius: 50%;
+	margin-right: 10px;
+	font-size: 25px;
 }
 
 .service.selected {
-  background-color: #323c49;
+	background-color: #323c49;
 }
 
 .service .status.online {
-  color: #28a745;
+	color: #28a745;
 }
 
 .service .status.offline {
-  color: #dc3545;
+	color: #dc3545;
 }
 
 .service .status.degraded {
-  color: #e36209;
+	color: #e36209;
 }
 
 .service .status.pulse {
-  animation: pulse-animation 2s infinite;
+	animation: pulse-animation 2s infinite;
 }
 
 @keyframes pulse-animation {
-  0% {
-    box-shadow: 0 0 0 0px rgba(205, 217, 229, 0.5);
-  }
-  100% {
-    box-shadow: 0 0 0 7px rgba(205, 217, 229, 0);
-  }
+	0% {
+		box-shadow: 0 0 0 0px rgba(205, 217, 229, 0.5);
+	}
+	100% {
+		box-shadow: 0 0 0 7px rgba(205, 217, 229, 0);
+	}
+}
+
+@media screen and (min-width: 601px) {
+	.service:nth-last-child(1):nth-child(odd) {
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
 }
