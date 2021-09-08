@@ -30,6 +30,15 @@ npm run start
 - Github: [@filippofinke](https://github.com/filippofinke)
 - LinkedIn: [@filippofinke](https://linkedin.com/in/filippofinke)
 
+## Todo
+- [ ] Incidents
+  - [ ] Automatic creation
+  - [ ] History
+- [ ] Plugins
+  - [ ] Email
+  - [ ] SMS
+  - [ ] Phone call
+
 ## Show your support
 
 Give a ⭐️ if this project helped you!
