@@ -2,7 +2,12 @@
 
 > A very simple uptime monitor and status page
 
-### ✨ [Demo](https://status.filippofinke.ch)
+<details>
+ <summary>Demo</summary>
+ <p align="center">
+  <img src="https://user-images.githubusercontent.com/37296364/149512114-06135744-d257-4f76-a76f-e93a9f567b25.gif">
+</p>
+</details>
 
 ## Install
 
